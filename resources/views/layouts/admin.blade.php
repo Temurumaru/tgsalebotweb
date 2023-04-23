@@ -31,6 +31,13 @@
 @section('sidebar')
 
 <li class="nav-item">
+  <a class="nav-link collapsed" href="/earn">
+    <i class="bi bi-chat-left"></i>
+    <span>Pul ishlamoqchiman</span>
+  </a>
+</li>
+
+<li class="nav-item">
   <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
     <i class="bi bi-menu-button-wide"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
   </a>
@@ -66,6 +73,6 @@
       </a>
     </li>
   </ul>
-</li><!-- End Components Nav -->
+</li>
 
 @endsection

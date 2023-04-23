@@ -39,11 +39,11 @@
             <input type="hidden" name="id" value="{{$start -> id}}">
             <div class="col-md-6">
               <label for="validationDefault01" class="form-label">Title </label>
-              <input type="text" class="form-control" name="title" id="validationDefault01" value="{{$start -> title}}" required>
+              <input disabled type="text" class="form-control" name="title" id="validationDefault01" value="{{$start -> title}}" required>
             </div>
           
             <div class="col-md-6">
-                <label for="validationDefault05" class="form-label">Rasm yoki video</label>
+                <label for="validationDefault05" class="form-label">Rasm</label>
                 <input type="file" class="form-control" name="image" id="validationDefault05" >
             </div>
             <div class="col-md-12">
@@ -93,11 +93,11 @@
             <input type="hidden" name="id" value="{{$val -> id}}">
             <div class="col-md-6">
               <label for="validationDefault01" class="form-label">Title </label>
-              <input type="text" class="form-control" name="title" id="validationDefault01" value="{{$val -> title}}" required>
+              <input disabled type="text" class="form-control" name="title" id="validationDefault01" value="{{$val -> title}}" required>
             </div>
           
             <div class="col-md-6">
-                <label for="validationDefault05" class="form-label">Rasm yoki video</label>
+                <label for="validationDefault05" class="form-label">Video</label>
                 <input type="file" name="video" class="form-control" id="validationDefault05" >
             </div>
             <div class="col-md-12">

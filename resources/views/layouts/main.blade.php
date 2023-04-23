@@ -63,7 +63,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/">
           <i class="bi bi-house-door"></i>
-          <span>Главная</span>
+          <span>Uy</span>
         </a>
       </li><!-- End Dashboard Nav -->
 

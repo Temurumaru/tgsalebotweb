@@ -71,6 +71,10 @@ if(@$_SESSION['user']) {
   Route::get('/', function () {
     return view('home');
   }) -> name('home');
+
+  Route::get('/earn', function () {
+    return view('earn');
+  }) -> name('earn');
   
   Route::get('/table', function () {
     return view('table');
@@ -82,8 +86,13 @@ if(@$_SESSION['user']) {
 
   Route::post(
     '/UpdateStartMess', 
-    $p.'StartController@UpdateStartMess'
+    $p.'MessController@UpdateStartMess'
   ) -> name('UpdateStartMess');
+
+  Route::post(
+    '/UpdateEarnMess', 
+    $p.'MessController@UpdateEarnMess'
+  ) -> name('UpdateEarnMess');
 
   Route::get(
     '/SignOut', 
