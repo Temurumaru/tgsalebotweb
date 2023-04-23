@@ -82,10 +82,17 @@ if(@$_SESSION['user']) {
     $cards = C::find("categoryes", "category = ?", [$req -> id]);
     return view('category', ['data' => $data, 'cards' => $cards]);
   }) -> name('category');
+
+  Route::get('/stocks', function (Request $req) {
+    $data = C::findOne("start_mess", "name = 'stocks'");
+    $cards = C::findAll("stocks");
+    return view('stocks', ['data' => $data, 'cards' => $cards]);
+  }) -> name('stocks');
   
-  Route::get('/table', function () {
-    return view('table');
-  }) -> name('table');
+  Route::get('/list', function () {
+    $users = C::findAll("users");
+    return view('list', ['users' => $users]);
+  }) -> name('list');
   
   Route::get('/image-text', function () {
     return view('image-text');
@@ -115,6 +122,21 @@ if(@$_SESSION['user']) {
     '/CategoryProductDelete', 
     $p.'ProductionController@Delete'
   ) -> name('CategoryProductDelete');
+
+  Route::post(
+    '/CategoryStocksCreate', 
+    $p.'StocksController@Create'
+  ) -> name('CategoryStocksCreate');
+
+  Route::post(
+    '/CategoryStocksUpdate', 
+    $p.'StocksController@Update'
+  ) -> name('CategoryStocksUpdate');
+
+  Route::get(
+    '/CategoryStocksDelete', 
+    $p.'StocksController@Delete'
+  ) -> name('CategoryStocksDelete');
 
   Route::get(
     '/SignOut', 

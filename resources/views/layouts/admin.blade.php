@@ -31,9 +31,23 @@
 @section('sidebar')
 
 <li class="nav-item">
+  <a class="nav-link collapsed" href="/list">
+    <i class="bi bi-card-list"></i>
+    <span>Royhat</span>
+  </a>
+</li>
+
+<li class="nav-item">
   <a class="nav-link collapsed" href="/earn">
-    <i class="bi bi-chat-left"></i>
+    <i class="bi bi-cash-coin"></i>
     <span>Pul ishlamoqchiman</span>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link collapsed" href="/stocks">
+    <i class="bi bi-bar-chart-line"></i>
+    <span>Aksiya</span>
   </a>
 </li>
 

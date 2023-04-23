@@ -35,7 +35,7 @@
           <p class="card-text">{{$val -> text}}</p>
           
           <hr>
-          <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('CategoryProductUpdate')}}">
+          <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('CategoryStocksUpdate')}}">
             @csrf
             <input type="hidden" name="id" value="{{$val -> id}}">
             <div class="col-md-6">
@@ -59,7 +59,7 @@
             <div class="col-12">
           {{-- <button class="btn btn-danger" type="submit">Delete  Card</button> --}}
 
-              <a href="{{route('CategoryProductDelete')}}?id={{$val -> id}}" class="mx-5 btn btn-danger">Ochirish</a>
+              <a href="{{route('CategoryStocksDelete')}}?id={{$val -> id}}" class="mx-5 btn btn-danger">Ochirish</a>
 
               <button class="btn btn-primary " type="submit">Yuklash</button>
             </div>
@@ -83,7 +83,7 @@
     <div class="card-body">
       <h5 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Yangi qowiw</font></font></h5>
 
-      <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('CategoryProductCreate')}}">
+      <form class="row g-3" method="post" enctype="multipart/form-data" action="{{route('CategoryStocksCreate')}}">
         @csrf
         <input type="hidden" name="id" value="{{$data -> id}}">
 
