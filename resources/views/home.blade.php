@@ -76,7 +76,11 @@
     
     <div class="row g-0">
       <div class="col-md-4">
+        @if ($val -> name == "info")
+        <img src="/uploads/images/{{$val -> media}}" class="img-fluid rounded-start" >
+        @else
         <img src="/assets/img/video-prev.png" class="img-fluid rounded-start" >
+        @endif
         {{-- <video muted="muted" class="col-md-12" controls>
           <source src="/uploads/videos/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -95,11 +99,20 @@
               <label for="validationDefault01" class="form-label">Title </label>
               <input disabled type="text" class="form-control" name="title" id="validationDefault01" value="{{$val -> title}}" required>
             </div>
-          
+            
+            @if ($val -> name == "info")
+            <div class="col-md-6">
+                <label for="validationDefault05" class="form-label">Rasm</label>
+                <input type="file" class="form-control" name="image" id="validationDefault05" >
+            </div>
+            @else
             <div class="col-md-6">
                 <label for="validationDefault05" class="form-label">Video</label>
                 <input type="file" name="video" class="form-control" id="validationDefault05" >
-            </div>
+            </div>   
+            @endif
+
+
             <div class="col-md-12">
               <textarea class="form-control" style="height:12rem;" placeholder="Bu yerda fikr qoldiring" id="floatingTextarea" style="height: 100px;" name="text">{{$val -> text}}</textarea>
             </div>

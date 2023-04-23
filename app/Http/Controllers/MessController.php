@@ -48,7 +48,7 @@ class MessController extends Controller
 				return back() -> withErrors(['video' => "Video rosa og'ir!"]);
 			}
 
-			$filename = $file->getClientOriginalName();
+			$filename = date("YmdHis").rand(0, 99999999).$file->getClientOriginalName();
 			$path = public_path().'/uploads/videos/';
 			File::delete(public_path('uploads/videos/').@$mess -> media);
 			$file->move($path, $filename);
@@ -100,7 +100,7 @@ class MessController extends Controller
 				return back() -> withErrors(['video' => "Video rosa og'ir!"]);
 			}
 
-			$filename = $file->getClientOriginalName();
+			$filename = date("YmdHis").rand(0, 99999999).$file->getClientOriginalName();
 			$path = public_path().'/uploads/videos/';
 			File::delete(public_path('uploads/videos/').@$mess -> media);
 			$file->move($path, $filename);

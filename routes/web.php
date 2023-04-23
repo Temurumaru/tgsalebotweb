@@ -73,8 +73,15 @@ if(@$_SESSION['user']) {
   }) -> name('home');
 
   Route::get('/earn', function () {
-    return view('earn');
+    $data = C::findOne("start_mess", "name = 'earn'");
+    return view('earn', ['data' => $data]);
   }) -> name('earn');
+
+  Route::get('/category', function (Request $req) {
+    $data = C::findOne("category_mess", "id = ?", [$req -> id]);
+    $cards = C::find("categoryes", "category = ?", [$req -> id]);
+    return view('category', ['data' => $data, 'cards' => $cards]);
+  }) -> name('category');
   
   Route::get('/table', function () {
     return view('table');
@@ -93,6 +100,21 @@ if(@$_SESSION['user']) {
     '/UpdateEarnMess', 
     $p.'MessController@UpdateEarnMess'
   ) -> name('UpdateEarnMess');
+
+  Route::post(
+    '/CategoryProductCreate', 
+    $p.'ProductionController@Create'
+  ) -> name('CategoryProductCreate');
+
+  Route::post(
+    '/CategoryProductUpdate', 
+    $p.'ProductionController@Update'
+  ) -> name('CategoryProductUpdate');
+
+  Route::get(
+    '/CategoryProductDelete', 
+    $p.'ProductionController@Delete'
+  ) -> name('CategoryProductDelete');
 
   Route::get(
     '/SignOut', 

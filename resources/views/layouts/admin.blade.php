@@ -42,36 +42,19 @@
     <i class="bi bi-menu-button-wide"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
   </a>
   <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    @php
+      use ThreadBeanPHP\C as C;
+
+      $categoryes = C::findAll('category_mess');
+    @endphp
+
+    @foreach ($categoryes as $val)
     <li>
-      <a href="components-alerts.html">
-        <i class="bi bi-circle"></i><span>Category 1</span>
+      <a href="/category?id={{$val -> id}}">
+        <i class="bi bi-circle"></i><span>{{$val -> title}}</span>
       </a>
     </li>
-    <li>
-      <a href="components-accordion.html">
-        <i class="bi bi-circle"></i><span>Category 2</span>
-      </a>
-    </li>
-    <li>
-      <a href="components-badges.html">
-        <i class="bi bi-circle"></i><span>Category 3</span>
-      </a>
-    </li>
-    <li>
-      <a href="components-breadcrumbs.html">
-        <i class="bi bi-circle"></i><span>Category 4</span>
-      </a>
-    </li>
-    <li>
-      <a href="components-buttons.html">
-        <i class="bi bi-circle"></i><span>Category 5</span>
-      </a>
-    </li>
-    <li>
-      <a href="components-cards.html">
-        <i class="bi bi-circle"></i><span>Category 6</span>
-      </a>
-    </li>
+    @endforeach
   </ul>
 </li>
 
